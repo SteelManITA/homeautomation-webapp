@@ -1,17 +1,70 @@
 {
-    "extends": "../tslint.json",
-    "rules": {
-        "directive-selector": [
-            true,
-            "attribute",
-            "app",
-            "camelCase"
-        ],
-        "component-selector": [
-            true,
-            "element",
-            "app",
-            "kebab-case"
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "private-static-field",
+          "protected-static-field",
+          "public-static-field",
+
+          "private-instance-field",
+          "protected-instance-field",
+          "public-instance-field",
+
+          "constructor",
+
+          "private-static-method",
+          "protected-static-method",
+          "public-static-method",
+
+          "private-instance-method",
+          "protected-instance-method",
+          "public-instance-method"
         ]
-    }
+      }
+    ],
+    "no-duplicate-variable": true,
+    "no-null-keyword": true,
+    "no-inferrable-types": false,
+    "no-unused-variable": [
+      true,
+      {
+        "ignore-pattern": "^_"
+      }
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration"
+    ],
+    "component-class-suffix": false,
+    "no-consecutive-blank-lines": true
+  }
 }

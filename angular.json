@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/homeautomation",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/app/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/themes/default/resources/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -72,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/themes/default/resources/scss/styles.scss"
             ],
             "scripts": [],
             "assets": [
