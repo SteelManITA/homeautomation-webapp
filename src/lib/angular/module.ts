@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import {
+  SessionStorageService,
+} from './services';
+
 const COMPONENTS: any[] = [
 ];
 
@@ -12,6 +16,7 @@ const PIPES: any[] = [
 ];
 
 const SERVICES: any[] = [
+  SessionStorageService,
 ];
 
 @NgModule({
