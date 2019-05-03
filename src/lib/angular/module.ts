@@ -7,6 +7,7 @@ import {
 } from './pipes';
 
 import {
+  ApiService,
   I18nService,
   LocalStorageService,
   SessionStorageService,
@@ -23,6 +24,7 @@ const PIPES: any[] = [
 ];
 
 const SERVICES: any[] = [
+  ApiService,
   I18nService,
   LocalStorageService,
   SessionStorageService,
