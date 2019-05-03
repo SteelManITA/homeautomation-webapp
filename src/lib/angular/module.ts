@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
+  I18nService,
   LocalStorageService,
   SessionStorageService,
 } from './services';
@@ -17,6 +18,7 @@ const PIPES: any[] = [
 ];
 
 const SERVICES: any[] = [
+  I18nService,
   LocalStorageService,
   SessionStorageService,
 ];
@@ -43,6 +45,8 @@ const SERVICES: any[] = [
 })
 export class LibModule {
   static forRoot(): ModuleWithProviders {
+    I18nService.init('en');
+
     return {
       ngModule: LibModule,
       providers: [
