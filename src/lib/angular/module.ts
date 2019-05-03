@@ -3,6 +3,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
+  I18nPipe,
+} from './pipes';
+
+import {
   I18nService,
   LocalStorageService,
   SessionStorageService,
@@ -15,6 +19,7 @@ const DIRECTIVES: any[] = [
 ];
 
 const PIPES: any[] = [
+  I18nPipe,
 ];
 
 const SERVICES: any[] = [

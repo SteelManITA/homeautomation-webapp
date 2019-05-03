@@ -1,1 +1,1 @@
-// export * from './core/pipes/...';
+export * from './core/pipes/i18n.pipe';
