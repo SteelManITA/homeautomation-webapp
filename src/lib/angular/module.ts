@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
+  LocalStorageService,
   SessionStorageService,
 } from './services';
 
@@ -16,6 +17,7 @@ const PIPES: any[] = [
 ];
 
 const SERVICES: any[] = [
+  LocalStorageService,
   SessionStorageService,
 ];
 
