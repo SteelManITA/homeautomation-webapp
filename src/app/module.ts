@@ -1,8 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-import { routes } from '@app/routes';
 
 import { HomeAutomationRequestService } from '@app/services';
 
@@ -14,8 +10,6 @@ import { DefaultThemeModule } from '@theme/module';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
     DefaultThemeModule,
   ],
   providers: [
