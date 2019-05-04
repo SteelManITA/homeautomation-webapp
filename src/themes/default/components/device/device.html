@@ -1,0 +1,15 @@
+<ng-container [ngSwitch]="model.type">
+
+  <app-device-air-conditioner
+    *ngSwitchCase="'air-conditioner'"
+    [model]="model"
+    (sent)="send($event)"
+  ></app-device-air-conditioner>
+
+  <app-device-light
+    *ngSwitchCase="'light'"
+    [model]="model"
+    (sent)="send($event)"
+  ></app-device-light>
+
+</ng-container>

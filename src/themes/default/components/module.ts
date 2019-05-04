@@ -3,10 +3,12 @@ import { LibModule } from '@lib/angular/module';
 
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { DeviceModule } from './device/device.module';
 
 const COMPONENT_MODULES: any[] = [
   HeaderModule,
   FooterModule,
+  DeviceModule,
 ];
 
 @NgModule({
