@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { LibModule } from '@lib/angular/module';
 
-const COMPONENTS: any[] = [
+const COMPONENT_MODULES: any[] = [
 ];
 
 @NgModule({
   imports: [
     LibModule.forRoot(),
-    ...COMPONENTS,
+    ...COMPONENT_MODULES,
   ],
   exports: [
-    ...COMPONENTS,
+    ...COMPONENT_MODULES,
   ],
   providers: [
   ]
