@@ -1,0 +1,6 @@
+<ng-container *ngFor="let device of room?.devices">
+  <app-device
+    [model]='device'
+    (sent)='send($event)'
+  ></app-device>
+</ng-container>
