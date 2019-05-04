@@ -1,0 +1,32 @@
+﻿<header>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="https://via.placeholder.com/30" alt="brand">
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        aria-label="Toggle navigation"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-line"></span>
+        <span class="navbar-toggler-line"></span>
+        <span class="navbar-toggler-line"></span>
+      </button>
+      <div class="collapse navbar-collapse" [class.show]="collapsed">
+        <ul class="navbar-nav ml-auto text-right">
+          <ng-container *ngFor="let item of menu?.items; let i = index">
+            <li class="nav-item" [class.active]="item.selected">
+              <a class="nav-link" [routerLink]="['/' + item.url]">
+                {{ 'menu.' + item.key | i18n }}
+                <span *ngIf="item.selected" class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

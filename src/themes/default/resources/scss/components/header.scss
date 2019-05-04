@@ -1,0 +1,26 @@
+app-header {
+  .navbar-toggler {
+    border-color: transparent;
+
+    width: 26px;
+    height: 20px;
+    position: relative;
+    margin-right: 16px;
+    padding: 0;
+
+    .navbar-toggler-line {
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      &:nth-child(1) {
+        top: calc(50% - 2px);
+      }
+      &:nth-child(2) {
+        top: calc(100% - 4px);
+      }
+    }
+  }
+}
