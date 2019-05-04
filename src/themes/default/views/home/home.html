@@ -1,1 +1,19 @@
-<h1>{{ 'home.title' | i18n }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{ 'home.title' | i18n }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">{{ devicesCount }} dispositivi</div>
+    <div class="col">
+      <div class="row">
+        <div class="col" *ngFor="let room of rooms">
+          <a [routerLink]="['/rooms/' + room.name]">
+            {{ room.name }}, {{ room.devices.length }} dispositivi
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
