@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import {
   I18nPipe,
+  ImagePipe,
 } from './pipes';
 
 import {
@@ -21,6 +22,7 @@ const DIRECTIVES: any[] = [
 
 const PIPES: any[] = [
   I18nPipe,
+  ImagePipe,
 ];
 
 const SERVICES: any[] = [
