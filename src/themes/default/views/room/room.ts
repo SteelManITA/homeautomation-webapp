@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HomeAutomationRequestService } from '@app/services';
 import { ParametersService } from '@lib/angular/services';
 
+import { Utils } from '@lib/utils';
 import { Room } from '@app/models';
 
 @Component({
@@ -14,6 +16,7 @@ export class RoomPage implements OnInit {
   constructor(
     private request: HomeAutomationRequestService,
     private params: ParametersService,
+    private router: Router,
   ) {
   }
 
@@ -23,6 +26,9 @@ export class RoomPage implements OnInit {
     this.request.getRooms().
       then((rooms: Room[]) => {
         this.room = rooms.find(room => room.name === roomName);
+        if (Utils.isNotDefined(this.room)) {
+          this.router.navigateByUrl('/');
+        }
       });
   }
 
