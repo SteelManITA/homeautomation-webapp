@@ -15,4 +15,4 @@ import { ViewsModule } from '@theme/views/module';
     ViewsModule,
   ]
 })
-export class ThemeModule {}
+export class DefaultThemeModule {}

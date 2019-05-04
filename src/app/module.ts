@@ -7,7 +7,7 @@ import { routes } from '@app/routes';
 import { HomeAutomationRequestService } from '@app/services';
 
 import { AppComponent } from '@app/component';
-import { ThemeModule } from '@theme/module';
+import { DefaultThemeModule } from '@theme/module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ThemeModule } from '@theme/module';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    ThemeModule,
+    DefaultThemeModule,
   ],
   providers: [
     HomeAutomationRequestService,
