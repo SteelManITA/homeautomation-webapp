@@ -65,15 +65,23 @@ export class Utils {
 
   static setDotObject(obj: Object, path: string, val: any): Object {
     for (const step of path.split('.')) {
-      obj = obj[step];
+      if (obj.hasOwnProperty(step)) {
+        obj = obj[step];
+      } else {
+        // TODO: creare i vari step come oggetti
+        return;
+      }
     }
     obj = val;
-    return obj;
   }
 
   static getDotObject(obj: Object, path: string): any {
     for (const step of path.split('.')) {
-      obj = obj[step];
+      if (obj.hasOwnProperty(step)) {
+        obj = obj[step];
+      } else {
+        return undefined;
+      }
     }
     return obj;
   }
