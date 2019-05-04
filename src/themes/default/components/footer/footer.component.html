@@ -1,0 +1,24 @@
+<footer>
+  <div *ngIf="footer?.columns?.length > 0" class="container">
+
+    <div class="row justify-content-md-between">
+      <div class="col" *ngFor="let col of footer?.columns">
+        <h4 class="h6 font-weight-semi-bold">{{ col.key | i18n }}</h4>
+        <ul class="list-group list-group-flush list-group-borderless mb-0">
+          <li *ngFor="let item of col.items">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/' + item.url]">
+              {{ 'menu.' + item.key | i18n }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container border-top pt-3 text-center">
+    <a class="d-inline-flex align-items-center mb-2" [routerLink]="['/']">
+      <img src="https://via.placeholder.com/30" alt="brand">
+    </a>
+    <p class="small text-muted">HomeAutomation 2019</p>
+  </div>
+</footer>
