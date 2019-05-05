@@ -35,6 +35,7 @@ const SERVICES: any[] = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
   ],
   declarations: [
     ...COMPONENTS,
