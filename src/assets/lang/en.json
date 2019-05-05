@@ -4,6 +4,10 @@
     "automation": "Automation",
     "settings": "Settings"
   },
+  "public": {
+    "back-to-home": "Back to home",
+    "not-found": "The content you requested could not found"
+  },
   "room": {
     "bedroom": "Bedroom",
     "living-room": "Living room"

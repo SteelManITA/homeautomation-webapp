@@ -5,10 +5,12 @@ import { ComponentsModule } from '../components/module';
 
 import { HomePage } from './home/home';
 import { RoomPage } from './room/room';
+import { NotFoundPage } from './not-found/not-found';
 
 const PAGES: any[] = [
   HomePage,
   RoomPage,
+  NotFoundPage,
 ];
 
 @NgModule({

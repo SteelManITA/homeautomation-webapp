@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomePage } from '@theme/views/home/home';
 import { RoomPage } from '@theme/views/room/room';
+import { NotFoundPage } from '@theme/views/not-found/not-found';
 
 export const routes: Routes = [
   {
@@ -22,8 +23,8 @@ export const routes: Routes = [
     redirectTo: '/',
     pathMatch: 'full'
   },
-  // {
-  //   path: '**',
-  //   component: NotFoundPage
-  // }
+  {
+    path: '**',
+    component: NotFoundPage
+  }
 ];
