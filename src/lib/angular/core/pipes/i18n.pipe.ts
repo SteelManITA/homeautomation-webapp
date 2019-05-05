@@ -3,7 +3,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { I18nService } from '../services/i18n.service';
 
 @Pipe({
-  name: 'i18n'
+  name: 'i18n',
+  pure: false
 })
 export class I18nPipe implements PipeTransform {
 
