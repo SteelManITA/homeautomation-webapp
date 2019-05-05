@@ -1,0 +1,4 @@
+<ng-container *ngFor="let radio of radios">
+  <label [for]="radio.id">{{ radio.label }}</label>
+  <input [id]="radio.id" type="radio" [(ngModel)]="value" [name]="name" [checked]="value === radio.value" [value]="radio.value">
+</ng-container>

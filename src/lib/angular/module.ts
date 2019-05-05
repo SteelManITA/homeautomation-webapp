@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {
   SwitchComponent,
   NumericButtonsComponent,
+  RadioGroupComponent,
 } from './components';
 
 import {
@@ -22,6 +23,7 @@ import {
 const COMPONENTS: any[] = [
   SwitchComponent,
   NumericButtonsComponent,
+  RadioGroupComponent,
 ];
 
 const DIRECTIVES: any[] = [
