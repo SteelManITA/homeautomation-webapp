@@ -50,7 +50,11 @@ export class I18nService {
   }
 
   private translateText(key: string): string {
-    const text: string = Utils.getDotObject(this.localStorage.get('lang'), key);
+    const lang: any = this.localStorage.get('lang');
+    if (Utils.isNotDefined(lang)) {
+      return key.replace(/[.-]/g, ' ');
+    }
+    const text: string = Utils.getDotObject(lang, key);
     return Utils.isDefined(text)
       ? text
       : key.replace(/[.-]/g, ' ');
