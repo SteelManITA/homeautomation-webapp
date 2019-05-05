@@ -43,5 +43,8 @@
       "send": "device.default.send | i18n",
       "state": "device.default.state | i18n"
     }
+  },
+  "settings": {
+    "change-language": "Cambia lingua in "
   }
 }

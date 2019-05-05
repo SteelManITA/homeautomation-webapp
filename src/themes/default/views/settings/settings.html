@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>
+    {{ 'menu.settings' | i18n }}
+  </h1>
+  {{ 'settings.change-language' | i18n }} <button (click)="toggle()">{{ lang === 'it' ? 'en' : 'it' }}</button>
+</div>

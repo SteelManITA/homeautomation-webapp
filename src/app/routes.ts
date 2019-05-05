@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomePage } from '@theme/views/home/home';
+import { SettingsPage } from '@theme/views/settings/settings';
 import { RoomPage } from '@theme/views/room/room';
 import { NotFoundPage } from '@theme/views/not-found/not-found';
 
@@ -9,6 +10,13 @@ export const routes: Routes = [
     component: HomePage,
     data: {
       title: 'Home page'
+    }
+  },
+  {
+    path: 'settings',
+    component: SettingsPage,
+    data: {
+      title: 'Settings'
     }
   },
   {

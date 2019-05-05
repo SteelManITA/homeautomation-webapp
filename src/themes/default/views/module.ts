@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/module';
 
 import { HomePage } from './home/home';
+import { SettingsPage } from './settings/settings';
 import { RoomPage } from './room/room';
 import { NotFoundPage } from './not-found/not-found';
 
 const PAGES: any[] = [
   HomePage,
+  SettingsPage,
   RoomPage,
   NotFoundPage,
 ];
