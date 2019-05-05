@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, ReflectiveInjector } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
@@ -64,7 +64,13 @@ const SERVICES: any[] = [
 })
 export class LibModule {
   static forRoot(): ModuleWithProviders {
-    I18nService.init('en');
+    const injector: ReflectiveInjector = ReflectiveInjector.resolveAndCreate([
+      LocalStorageService
+    ]);
+    const localStorage: LocalStorageService = injector.get(LocalStorageService);
+    const currLang: string = localStorage.get('currLang');
+
+    I18nService.init(currLang);
 
     return {
       ngModule: LibModule,

@@ -29,6 +29,7 @@ export class I18nService {
         .get<any>('assets/lang/' + lang + '.json')
         .then((response: {[key: string]: any}) => {
           localStorage.set('lang', response);
+          localStorage.set('currLang', lang);
           resolve(true);
         })
         .catch((e: Error) => {
@@ -36,6 +37,7 @@ export class I18nService {
           request.get('assets/lang/it.json').
             then((response: {[key: string]: any}) => {
               localStorage.set('lang', response);
+              localStorage.set('currLang', 'it');
               resolve(true);
             }).
             catch(() => {
