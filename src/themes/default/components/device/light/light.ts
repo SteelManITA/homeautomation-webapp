@@ -13,7 +13,7 @@ export class LightComponent implements OnInit {
     this.state = (this.model.state === 'on') ? true : false;
   }
 
-  onStateChanges(): void {
-    this.model.state = (this.state) ? 'on' : 'off';
+  onStateChanges(state: boolean): void {
+    this.model.state = (state) ? 'on' : 'off';
   }
 }

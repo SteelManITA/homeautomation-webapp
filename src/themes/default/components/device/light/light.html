@@ -1,4 +1,5 @@
-<div>
-  <label>{{ model.name }}</label>
-  <input type="checkbox" [(ngModel)]="state" [checked]="model.state === 'on'" (change)="onStateChanges()">
-</div>
+<lib-switch
+  [state]="state"
+  [label]="model.name"
+  (change)="onStateChanges($event)"
+></lib-switch>
