@@ -76,3 +76,9 @@
     border-radius: 25px;
   }
 }
+
+label {
+  &[for] {
+    cursor: pointer;
+  }
+}
