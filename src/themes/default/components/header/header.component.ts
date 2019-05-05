@@ -15,7 +15,7 @@ export class HeaderComponent {
     items: [
       {
         selected: false,
-        url: 'home',
+        url: '',
         key: 'home',
       },
       {
