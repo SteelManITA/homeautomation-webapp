@@ -3,6 +3,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
+  NumericButtonsComponent,
+} from './components';
+
+import {
   I18nPipe,
   ImagePipe,
 } from './pipes';
@@ -15,6 +19,7 @@ import {
 } from './services';
 
 const COMPONENTS: any[] = [
+  NumericButtonsComponent,
 ];
 
 const DIRECTIVES: any[] = [

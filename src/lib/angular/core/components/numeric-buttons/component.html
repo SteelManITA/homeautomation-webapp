@@ -1,0 +1,9 @@
+<div class="numeric-buttons">
+  <button (click)="dec()" [disabled]="value === minValue">
+    <div class="minus"></div>
+  </button>
+  <span class="value">{{ value }}</span>
+  <button (click)="inc()" [disabled]="value === maxValue">
+    <div class="plus"></div>
+  </button>
+</div>
