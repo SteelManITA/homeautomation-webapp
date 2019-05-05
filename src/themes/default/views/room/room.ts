@@ -11,7 +11,7 @@ import { Room } from '@app/models';
 })
 export class RoomPage implements OnInit {
   room: Room;
-  tab: string;
+  deviceId: number;
 
   constructor(
     private request: HomeAutomationRequestService,
@@ -29,6 +29,9 @@ export class RoomPage implements OnInit {
         if (Utils.isNotDefined(this.room)) {
           this.router.navigateByUrl('/');
         }
+        if (this.room.devices.length > 0) {
+          this.deviceId = this.room.devices[0].id;
+        }
       });
   }
 
@@ -40,5 +43,12 @@ export class RoomPage implements OnInit {
       catch((err) => {
         console.log('fallito', err);
       });
+  }
+
+  showDevice(event: Event, id: number): void {
+    if (Utils.isDefined(event)) {
+      event.preventDefault();
+    }
+    this.deviceId = id;
   }
 }

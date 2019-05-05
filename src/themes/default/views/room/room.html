@@ -1,8 +1,28 @@
 <div class="container">
-  <ng-container *ngFor="let device of room?.devices">
-    <app-device
-      [model]='device'
-      (sent)='send($event)'
-    ></app-device>
-  </ng-container>
+  <ul class="nav nav-tabs mt-2">
+    <li class="nav-item" *ngFor="let device of room?.devices">
+      <a
+        class="nav-link"
+        href="#"
+        [ngClass]="{'active': device.id === deviceId}"
+        (click)="showDevice($event, device.id)"
+      >{{ device.name }}</a>
+    </li>
+  </ul>
+
+  <div class="tab-content clearfix">
+    <div
+      class="tab-pane d-block"
+      *ngFor="let device of room?.devices"
+    >
+      <ng-container
+        *ngIf="device.id === deviceId"
+      >
+        <app-device
+          [model]="device"
+          (sent)="send($event)"
+        ></app-device>
+      </ng-container>
+    </div>
+  </div>
 </div>
