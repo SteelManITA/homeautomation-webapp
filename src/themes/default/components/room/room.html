@@ -1,0 +1,7 @@
+<div class="media align-items-center">
+  <img src="{{ model.name | image | async }}" class="w-25 mr-3" [alt]="model.name">
+  <div class="media-body">
+    <h5 class="mt-0">{{ 'room.' + model.name | i18n }}</h5>
+    {{ model.devices.length }} {{ (model.devices.length === 1 ? 'home.device' : 'home.devices') | i18n }}
+  </div>
+</div>
