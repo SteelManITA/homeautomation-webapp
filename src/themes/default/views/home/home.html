@@ -1,16 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>{{ 'home.title' | i18n }}</h1>
+      <h1>{{ 'menu.home' | i18n }}</h1>
     </div>
   </div>
   <div class="row">
-    <div class="col">{{ devicesCount }} dispositivi</div>
+    <div class="col text-center">
+      <h3>
+        {{ 'home.all-devices' | i18n }}:
+        <small>
+          {{ devicesCount }} {{ (devicesCount === 1 ? 'home.device' : 'home.devices') | i18n }}
+        </small>
+      </h3>
+    </div>
+  </div>
+  <div class="row mt-2">
     <div class="col">
       <div class="row">
         <div class="col" *ngFor="let room of rooms">
           <a [routerLink]="['/rooms/' + room.name]">
-            {{ room.name }}, {{ room.devices.length }} dispositivi
+            <app-room [model]="room"></app-room>
           </a>
         </div>
       </div>
