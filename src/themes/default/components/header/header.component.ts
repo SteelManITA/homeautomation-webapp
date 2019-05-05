@@ -45,7 +45,8 @@ export class HeaderComponent {
             )
           ) {
             menu[index].selected = true;
-            return;
+          } else {
+            menu[index].selected = false;
           }
         });
       });
