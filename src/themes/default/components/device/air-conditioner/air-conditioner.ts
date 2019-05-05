@@ -13,18 +13,6 @@ export class AirConditionerComponent implements OnInit {
     this.state = (this.model.state === 'on') ? true : false;
   }
 
-  inc(event: Event): void {
-    if (this.model.temperature < 30) {
-      ++this.model.temperature;
-    }
-  }
-
-  dec(event: Event): void {
-    if (this.model.temperature > 16) {
-      --this.model.temperature;
-    }
-  }
-
   onStateChanges(): void {
     this.model.state = (this.state) ? 'on' : 'off';
   }

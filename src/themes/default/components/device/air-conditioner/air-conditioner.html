@@ -1,87 +1,137 @@
-<div>
-  <label>{{ model.name }}</label>
-  <input type="checkbox" [(ngModel)]="state" [checked]="model.state === 'on'" (change)="onStateChanges()">
+<div class="row">
+  <div class="col">
+    <h2 class="d-inline">{{ model.name }}</h2>
+    <lib-switch
+      class="d-block float-right"
+      [(state)]="state"
+      (stateChange)="onStateChanges($event)"
+    ></lib-switch>
+  </div>
 </div>
 
-<div margin style="text-align: center">
-  <img
-    src="{{ model.type | image | async }}"
-    alt=""
-  >
+<div class="row">
+  <div class="col">
+    <div class="text-center">
+      <img
+        class="w-25"
+        src="{{ model.type | image | async }}"
+        alt=""
+      >
+    </div>
+  </div>
 </div>
 
-<div class="numeric-buttons">
-  <button (click)="dec($event)" [disabled]="model.temperature === 16">
-    <div class="minus"></div>
-  </button>
-  <span class="value">{{ model.temperature }}</span>
-  <button (click)="inc($event)" [disabled]="model.temperature === 30">
-    <div class="plus"></div>
-  </button>
+<lib-numeric-buttons
+  [(value)]="model.temperature"
+  minValue="16"
+  maxValue="30"
+></lib-numeric-buttons>
+
+<div class="row">
+  <div class="col">
+    <h2>
+      {{ 'device.air_conditioner.mode' | i18n }}
+    </h2>
+
+    <lib-radio-group
+      name="mode"
+      [(value)]="model.mode"
+      [radios]="[
+        {
+          value: 'cool',
+          label: 'device.air_conditioner.cool' | i18n
+        },
+        {
+          value: 'heat',
+          label: 'device.air_conditioner.heat' | i18n
+        },
+        {
+          value: 'dry',
+          label: 'device.air_conditioner.dry' | i18n
+        },
+        {
+          value: 'auto',
+          label: 'device.air_conditioner.auto' | i18n
+        }
+      ]"
+    ></lib-radio-group>
+  </div>
 </div>
 
-<div>
-  <h2>
-    {{ 'device.air_conditioner.mode' | i18n }}
-  </h2>
+<div class="row">
+  <div class="col">
+    <h2>
+      {{ 'device.air_conditioner.fan_speed' | i18n }}
+    </h2>
 
-  <label for="mode-cool">{{ 'device.air_conditioner.cool' | i18n }}</label>
-  <input id="mode-cool" type="radio" [(ngModel)]="model.mode" name="mode" [checked]="model.mode === 'cool'" value="cool">
-
-  <label for="mode-heat">{{ 'device.air_conditioner.heat' | i18n }}</label>
-  <input id="mode-heat" type="radio" [(ngModel)]="model.mode" name="mode" [checked]="model.mode === 'heat'" value="heat">
-
-  <label for="mode-dry">{{ 'device.air_conditioner.dry' | i18n }}</label>
-  <input id="mode-dry" type="radio" [(ngModel)]="model.mode" name="mode" [checked]="model.mode === 'dry'" value="dry">
-
-  <label for="mode-auto">{{ 'device.air_conditioner.auto' | i18n }}</label>
-  <input id="mode-auto" type="radio" [(ngModel)]="model.mode" name="mode" [checked]="model.mode === 'auto'" value="auto">
+    <lib-radio-group
+      name="fanSpeed"
+      [(value)]="model.fanSpeed"
+      [radios]="[
+        {
+          value: 'lowest',
+          label: 'device.air_conditioner.lowest' | i18n
+        },
+        {
+          value: 'low',
+          label: 'device.air_conditioner.low' | i18n
+        },
+        {
+          value: 'medium',
+          label: 'device.air_conditioner.medium' | i18n
+        },
+        {
+          value: 'high',
+          label: 'device.air_conditioner.high' | i18n
+        },
+        {
+          value: 'highest',
+          label: 'device.air_conditioner.highest' | i18n
+        },
+        {
+          value: 'auto',
+          label: 'device.air_conditioner.auto' | i18n
+        }
+      ]"
+    ></lib-radio-group>
+  </div>
 </div>
 
-<div>
-  <h2>
-    {{ 'device.air_conditioner.fan_speed' | i18n }}
-  </h2>
+<div class="row">
+  <div class="col">
+    <h2>
+      {{ 'device.air_conditioner.swing' | i18n }}
+    </h2>
 
-  <label for="fan-speed-lowest">{{ 'device.air_conditioner.lowest' | i18n }}</label>
-  <input id="fan-speed-lowest" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'lowest'" value="lowest">
-
-  <label for="fan-speed-low">{{ 'device.air_conditioner.low' | i18n }}</label>
-  <input id="fan-speed-low" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'low'" value="low">
-
-  <label for="fan-speed-medium">{{ 'device.air_conditioner.medium' | i18n }}</label>
-  <input id="fan-speed-medium" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'medium'" value="medium">
-
-  <label for="fan-speed-high">{{ 'device.air_conditioner.high' | i18n }}</label>
-  <input id="fan-speed-high" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'high'" value="high">
-
-  <label for="fan-speed-highest">{{ 'device.air_conditioner.highest' | i18n }}</label>
-  <input id="fan-speed-highest" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'highest'" value="highest">
-
-  <label for="fan-speed-auto">{{ 'device.air_conditioner.auto' | i18n }}</label>
-  <input id="fan-speed-auto" type="radio" [(ngModel)]="model.fanSpeed" name="fan-speed" [checked]="model.fanSpeed === 'auto'" value="auto">
-</div>
-
-<div>
-  <h2>
-    {{ 'device.air_conditioner.swing' | i18n }}
-  </h2>
-
-  <label for="swing-lowest">{{ 'device.air_conditioner.lowest' | i18n }}</label>
-  <input id="swing-lowest" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'lowest'" value="lowest">
-
-  <label for="swing-low">{{ 'device.air_conditioner.low' | i18n }}</label>
-  <input id="swing-speedlow" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'low'" value="low">
-
-  <label for="swing-medium">{{ 'device.air_conditioner.medium' | i18n }}</label>
-  <input id="swing-medium" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'medium'" value="medium">
-
-  <label for="swing-high">{{ 'device.air_conditioner.high' | i18n }}</label>
-  <input id="swing-speedhigh" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'high'" value="high">
-
-  <label for="swing-highest">{{ 'device.air_conditioner.highest' | i18n }}</label>
-  <input id="swing-highest" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'highest'" value="highest">
-
-  <label for="swing-auto">{{ 'device.air_conditioner.auto' | i18n }}</label>
-  <input id="swing-speedauto" type="radio" [(ngModel)]="model.swing" name="swing" [checked]="model.swing === 'auto'" value="auto">
+    <lib-radio-group
+      name="swing"
+      [(value)]="model.swing"
+      [radios]="[
+        {
+          value: 'lowest',
+          label: 'device.air_conditioner.lowest' | i18n
+        },
+        {
+          value: 'low',
+          label: 'device.air_conditioner.low' | i18n
+        },
+        {
+          value: 'medium',
+          label: 'device.air_conditioner.medium' | i18n
+        },
+        {
+          value: 'high',
+          label: 'device.air_conditioner.high' | i18n
+        },
+        {
+          value: 'highest',
+          label: 'device.air_conditioner.highest' | i18n
+        },
+        {
+          value: 'auto',
+          label: 'device.air_conditioner.auto' | i18n
+        }
+      ]"
+    ></lib-radio-group>
+  </div>
 </div>
