@@ -12,7 +12,6 @@ import { filter } from 'rxjs/operators';
 })
 export class ParametersService {
   private params: any;
-  private ready: boolean = false;
 
   constructor(
     private router: Router,
