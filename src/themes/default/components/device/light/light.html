@@ -1,5 +1,10 @@
-<lib-switch
-  [state]="state"
-  [label]="model.name"
-  (change)="onStateChanges($event)"
-></lib-switch>
+<div class="row">
+  <div class="col">
+    <h2 class="d-inline">{{ model.name }}</h2>
+    <lib-switch
+      class="d-block float-right"
+      [(state)]="state"
+      (stateChange)="onStateChanges($event)"
+    ></lib-switch>
+  </div>
+</div>
