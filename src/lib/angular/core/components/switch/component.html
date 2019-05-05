@@ -1,0 +1,5 @@
+<label class="switch">
+  <input [id]="id" type="checkbox" [(ngModel)]="state" [checked]="state" (change)="onStateChanges()">
+  <span class="slider"></span>
+</label>
+<label *ngIf="label" [for]="id">{{ label }}</label>

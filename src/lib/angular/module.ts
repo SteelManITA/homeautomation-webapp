@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import {
+  SwitchComponent,
   NumericButtonsComponent,
 } from './components';
 
@@ -19,6 +20,7 @@ import {
 } from './services';
 
 const COMPONENTS: any[] = [
+  SwitchComponent,
   NumericButtonsComponent,
 ];
 
