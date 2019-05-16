@@ -6,7 +6,7 @@ export interface Room {
 export interface Device {
   id: number;
   name: string;
-  type: 'air-conditioner';
+  type: 'air-conditioner' | 'light';
   room: string;
 }
 
